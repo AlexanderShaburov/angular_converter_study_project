@@ -1,0 +1,7 @@
+<div id="report">
+    <p>Conversion data: {{conversionData.timestamp}}</p>
+    <p>{{conversionData.fromAmount}} {{conversionData.fromCode}} with rate {{conversionData.fromRate}} were converted to: </p>
+    <p>{{conversionData.toAmount}} {{conversionData.toCode}} with rate {{conversionData.toRate}}</p>
+    <p>Data saving status:  {{conversionData.savingStatus}} </p>
+    <button (click)="resetReport()" tabindex="0">Close report</button>
+</div>

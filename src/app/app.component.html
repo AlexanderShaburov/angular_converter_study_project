@@ -1,0 +1,22 @@
+<div tabindex="0">
+  <h2>Django - Angular convertor</h2>
+  <div id="buttonContainer">
+    <button (click)="selectTab('mainTab')" 
+    [ngClass]="{'active': selectedTab === 'mainTab'}">
+      Make conversion
+    </button>
+    <button 
+    (click)="selectTab('queriesTab')"
+    [ngClass]="{'active': selectedTab === 'queriesTab'}">
+    History access</button>
+  </div>
+
+  <div *ngIf="selectedTab === 'mainTab'; else queriesPage">
+    <app-main-container tabindex="0"></app-main-container>
+  </div>
+  <ng-template #queriesPage>
+    <app-queries-page></app-queries-page>
+  </ng-template>
+
+
+</div>

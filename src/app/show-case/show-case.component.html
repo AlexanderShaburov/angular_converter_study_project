@@ -1,0 +1,13 @@
+<ng-container>
+    <div class="container">
+        <span class="frameLable">{{lable}}</span>
+        <div [innerHTML]="currencyToShow.flag" class="img"></div>
+        <span *ngIf="currencyToShow.code != 'SLCT'; else blankSpace">{{currencyToShow.code}}</span>
+        <ng-template #blankSpace>
+            <span> </span>
+        </ng-template>
+        
+        <span class="currName">{{currencyToShow.name}}</span>
+        <div id="arrow"></div>
+    </div>
+</ng-container>

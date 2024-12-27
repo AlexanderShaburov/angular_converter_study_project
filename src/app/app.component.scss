@@ -1,0 +1,31 @@
+:host {
+    &>div {
+        h2{
+            text-align: center;
+            font-family: sans-serif;
+            color:rgb(71, 71, 71);
+            width: 90vw;
+            padding: auto;
+        }
+        &>#buttonContainer {
+            box-sizing: border-box;
+            height: 3rem;
+            width: 90vw;
+            margin: auto;
+
+            &>button {
+                font-size: 1.5rem;
+                color: rgb(94, 93, 93);
+                width: 50%;
+                height: 3rem;
+                border: none;
+                border-radius: 1rem 1rem 0 0;
+                outline: none;
+                box-shadow: 1px -1px 5px #111113;
+            }
+            &>.active {
+                background-color: #406be378;
+            }
+        }
+    }
+}

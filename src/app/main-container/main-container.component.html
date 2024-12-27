@@ -1,0 +1,55 @@
+<!-- <h2>Main container component</h2> -->
+<div id="mainContainer">
+    <div id="amountCase" class="frame" tabindex="0">
+        <div *ngIf="isFocusedAmount; else showCaseAmount;" class="container">
+                <span class="frameLable">Amount</span>
+                <span class="currSymbol">{{fromCurrency.symbol}}</span>
+                <input class="currAmount" id="amount" (input)="addValue($event)" type="text">
+        </div>
+        <ng-template #showCaseAmount>
+            <div class="container">
+                <span class="frameLable">Amount</span>
+                <span class="currSymbol">{{fromCurrency.symbol}}</span>
+                <span class="currAmount">{{amount}}</span>
+            </div>
+        </ng-template>
+    </div>
+    <div class="frame" id="fromCase" tabindex="0">
+        <div *ngIf="isFocusedFrom; else showCaseFrom;">
+            <app-drop-box (selectCurrency)="setCurrency($event)" (closeBox)="closeDropBox()" [lable]="'From'">
+            </app-drop-box>
+        </div>
+        <ng-template #showCaseFrom>
+            <app-show-case [currencyToShow]="this.fromCurrency" [lable]="'From'">
+            </app-show-case>
+        </ng-template>
+    </div>
+    <button id="swapButton" (click)="swapCurrencies()">
+    </button>
+    <div class="frame" id="toCase" tabindex=0>
+        <div *ngIf="isFocusedTo; else showCaseTo;">
+            <app-drop-box (selectCurrency)="setCurrency($event)" (closeBox)="closeDropBox()" [lable]="'To'">
+            </app-drop-box>
+        </div>
+        <ng-template #showCaseTo>
+            <app-show-case [currencyToShow]="this.toCurrency" [lable]="'To'">
+            </app-show-case>
+        </ng-template>
+    </div>
+    <button id="viewButton" (click)="displayCalculations()">View</button>
+    <!--  -->
+    <div id="converted" *ngIf="viewPressed;">
+        <div class="fromView">{{fromFormattedAmount}} {{fromCurrency.name}} =</div>
+        <div class="toView">{{formattedConvertedAmount}} {{toCurrency.name}} </div>
+    </div>
+    <!--  -->
+    <div id="convertButton">
+        <button *ngIf="viewPressed;" (click)="convert()">Convert</button>
+    </div>
+    <div id="showConversion" *ngIf="showConversion;">
+        <app-convert-report 
+        [conversionData]="this.conversionData"
+        (resetView)="reset()">
+        </app-convert-report>
+    </div>
+</div>

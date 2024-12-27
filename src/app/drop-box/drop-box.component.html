@@ -1,0 +1,21 @@
+<div class="container">
+    <div id="inputPart">
+        <span class="frameLable">{{lable}}</span>
+        <input type="text" (input)="getFilteredList($event)" name="filterValue" placeholder="Type to search... ">
+        <div id="close" (click)="closeDropBox()"></div>
+    </div>
+    <div id="dropBox">
+        <ul>
+            <li *ngFor="let currCode of filteredList | keyvalue"
+            tabindex="0"
+            (click)="selectCurrencyFromList($event)"
+            [id]="currCode.key"
+            class="dropList">
+                <div [innerHTML]="currCode.value.flag"></div>
+                <!-- <img [src]="currCode.value.flag" class="strFlag">  -->
+                <span class="currCode">    {{currCode.key}}  </span>
+                <span class="currName">{{currCode.value.name}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div id="queries_page">
+    <div id="queryForm">
+        <form action="">
+            <div id="since_date" class="cell">
+                <label for="since">Since date</label>
+                <input type="date" id="since">
+            </div>
+            <div id="until_date" class="cell">
+                <label for="until">Until date</label>
+                <input type="date" id="until">
+            </div>
+            <div id="lower_limit" class="cell">
+                <label for="min_value">Min amount</label>
+                <input type="text" id="min_value"
+                (input)="addValue($event)">
+            </div>
+            <div id="upper_limit" class="cell" 
+                (input)="addValue($event)">
+                <label for="max_value">Max amount</label>
+                <input type="text" id="max_value">
+            </div>
+            <div class="frame" id="fromCase" tabindex="0">
+                <div *ngIf="isFocusedFrom; else showCaseFrom;">
+                    <app-drop-box 
+                        (selectCurrency)="setCurrency($event)" 
+                        (closeBox)="closeDropBox()" 
+                        [lable]="'From'">
+                    </app-drop-box>
+                </div>
+                <ng-template #showCaseFrom>
+                    <app-show-case 
+                        [currencyToShow]="this.fromCurrency" 
+                        [lable]="'From'">
+                    </app-show-case>
+                </ng-template>
+            </div>
+            <div class="frame" id="toCase" tabindex=0>
+                <div *ngIf="isFocusedTo; else showCaseTo;">
+                    <app-drop-box 
+                        (selectCurrency)="setCurrency($event)" 
+                        (closeBox)="closeDropBox()" 
+                        [lable]="'To'">
+                    </app-drop-box>
+                </div>
+                <ng-template #showCaseTo>
+                    <app-show-case 
+                        [currencyToShow]="this.toCurrency" 
+                        [lable]="'To'">
+                    </app-show-case>
+                </ng-template>
+            </div>
+            <div class="button_cell">
+                <button (click)="requestQuery($event)">Request data</button>
+            </div>
+        </form>
+    </div>
+    <div id="display_aria">
+
+    </div>
+</div>

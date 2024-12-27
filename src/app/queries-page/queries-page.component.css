@@ -1,0 +1,44 @@
+:host #queries_page {
+  display: flex;
+  padding-top: 2rem;
+  width: 90vw;
+  margin: auto;
+}
+:host #queries_page #queryForm {
+  display: block;
+  width: 25%;
+  min-width: 200px;
+}
+:host #queries_page #queryForm > form {
+  color: rgb(56, 56, 56);
+  font-size: 0.8rem;
+  font-family: sans-serif;
+}
+:host #queries_page #queryForm > form .cell {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+:host #queries_page #queryForm > form .button_cell {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: end;
+}
+:host #queries_page #queryForm > form .button_cell > button {
+  width: 8rem;
+  height: 2.5rem;
+  justify-self: end;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #407ce3;
+  color: #fff;
+  font-size: 1rem;
+}
+:host #queries_page #queryForm > form .frame {
+  margin-top: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+}/*# sourceMappingURL=queries-page.component.css.map */

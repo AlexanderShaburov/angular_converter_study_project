@@ -1,0 +1,58 @@
+:host {
+    #queries_page {
+        display: flex;
+        padding-top: 2rem;
+        width: 90vw;
+        margin: auto;
+
+        #queryForm {
+            display:block;
+            width: 25%;
+            min-width: 200px;
+
+            &>form {
+                // display: grid;
+                // grid-template-columns: 1fr 1fr 1fr;
+                // grid-template-rows: auto auto auto;
+                // grid-auto-flow: column;
+                // gap: 3rem;
+                color: rgb(56, 56, 56);
+                // padding: 1rem;
+                font-size: 0.8rem;
+                font-family: sans-serif;
+
+                .cell {
+                    margin-top: 0.5rem;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    
+                }
+                
+                .button_cell {
+                    margin-top: 1.5rem;
+                    display: flex;
+                    justify-content: end;
+                    &>button {
+
+                        width: 8rem;
+                        height: 2.5rem;
+                        justify-self: end;
+                        border-radius: 0.5rem;
+                        border: none;
+                        background-color: #407ce3;
+                        color: #fff;
+                        font-size: 1rem;
+                    }
+                }
+                .frame{
+                    margin-top: 0.5rem;
+                    width: 100%;
+                    box-sizing: border-box;
+                    border: 1px solid gray;
+                    border-radius: 0.5rem;
+                }
+            }
+        }
+    }
+}

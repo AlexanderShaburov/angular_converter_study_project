@@ -1,0 +1,121 @@
+:host {
+    &>.container {
+        position: relative;
+        box-sizing: border-box;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        height: 4rem;
+        // border: 1px solid darkgray;
+        border-radius: 0.5rem;
+
+        &>#inputPart {
+            display: grid;
+            grid-template-columns: auto 1.4rem;
+            grid-template-rows: 1rem 2.5rem;
+            height: 100%;
+            padding: 0 1rem;
+
+            &>.frameLable {
+                // padding-top: 0.3rem;
+                grid-row: 1 /2;
+                color: rgba(84, 84, 84, 0.661);
+            }
+
+            &>input {
+                grid-row: 2/3;
+                grid-column: 1/2;
+                padding-left: 0.5rem;
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                border: none;
+                outline: none;
+                box-shadow: none;
+                font-size: 1rem;
+                color:rgba(68, 68, 68, 0.851);
+
+            }
+            &>input:focus{
+                border: none;
+                box-shadow: none;
+                outline: none;
+            }
+
+            &>::placeholder {
+                color:rgba(68, 68, 68, 0.323);
+                font-size: 1rem;
+            }
+
+            &>#close {
+                grid-row: 2/3;
+                grid-column: 2/3;
+                color: rgba(68, 68, 68, 0.831);
+                font-size: 2.8rem;
+                font-weight: lighter;
+                display: flex;
+                align-items: center;
+                rotate: 45deg;
+                margin-top: -14px;
+                margin-left: 3px;
+
+            }
+            
+            &>#close::before {
+                content: "+";
+            }
+
+        }
+
+        &>#dropBox {
+            position: absolute;
+            top: 3rem;
+            left: 0;
+            background-color: #fff;
+            z-index: 2;
+            margin-top: 2rem;
+            border: 1px solid lightgrey;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            height: 22rem;
+            overflow-y: scroll;
+            background-color: #fff;
+            
+            &>ul {
+                padding-bottom: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                &>:hover {
+                    background-color: rgba(229, 227, 227, 0.555);
+                }
+
+                &>li {
+                    display: grid;
+                    gap: 0.7rem;
+                    grid-template-columns: 1rem 2.5rem auto;
+                    max-width: 100%;
+                    height: 1.5rem;
+
+                    &>.currName {
+                        max-width: 100%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        color: rgba(62, 62, 62, 0.708);
+                    }
+
+                    &>.currCode {
+                        color: rgb(0, 0, 0);
+
+                    }
+                }
+            }
+        }
+    }
+}
